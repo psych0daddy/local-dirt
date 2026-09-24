@@ -1,0 +1,807 @@
+{
+  "project_name": "MetroLocal Indy South",
+  "output_dir": "output",
+  "state_file": "seen_items.json",
+  "request": {
+    "timeout_seconds": 20,
+    "sleep_seconds_between_requests": 1.0,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36 MetroLocal-IndySouth/0.2 (+local public-information collector; contact: YOUR_EMAIL_HERE)",
+    "respect_robots_txt": true,
+    "robots_exempt_domains": [
+      "johnsoncounty.in.gov",
+      "greenwood.in.gov",
+      "franklin.in.gov",
+      "beechgrove.com",
+      "edinburgh.in.us",
+      "townofwhiteland.com",
+      "townofbargersville.org",
+      "townoftrafalgar.org",
+      "perryschools.org",
+      "centergrove.k12.in.us",
+      "ftcsc.org",
+      "franklinschools.org",
+      "bgcs.k12.in.us",
+      "gws.k12.in.us",
+      "cpcsc.k12.in.us",
+      "nhj.k12.in.us",
+      "in.gov",
+      "dailyjournal.net",
+      "rss.buzzsprout.com"
+    ]
+  },
+  "limits": {
+    "max_pages_per_source": 12,
+    "max_links_from_page": 120,
+    "max_text_chars_per_item": 3000,
+    "max_pdf_pages": 25,
+    "max_text_chars_broad_source": 400,
+    "max_item_age_days": 9
+  },
+  "crawl_link_terms": [
+    "news",
+    "latest",
+    "updates",
+    "alerts",
+    "notice",
+    "notices",
+    "agenda",
+    "agendas",
+    "minutes",
+    "meeting",
+    "meetings",
+    "board",
+    "council",
+    "commission",
+    "planning",
+    "zoning",
+    "bza",
+    "redevelopment",
+    "projects",
+    "construction",
+    "roads",
+    "traffic",
+    "closures",
+    "calendar",
+    "events",
+    "athletics",
+    "sports",
+    "scores",
+    "results",
+    "live-feed",
+    "documents",
+    "document",
+    "public-notice",
+    "public-notices",
+    "press",
+    "release",
+    "releases",
+    "development",
+    "report",
+    "packet"
+  ],
+  "ignore_link_terms": [
+    "login",
+    "signin",
+    "privacy",
+    "terms",
+    "accessibility",
+    "employment",
+    "careers",
+    "staff-directory",
+    "contact-us",
+    "facebook.com",
+    "instagram.com",
+    "linkedin.com",
+    "x.com",
+    "twitter.com",
+    "youtube.com",
+    "practice",
+    "calendar-template",
+    "vertex42"
+  ],
+  "broad_source_keywords": [
+    "Franklin Township",
+    "Franklin Central",
+    "Wanamaker",
+    "Acton",
+    "Perry Township",
+    "Perry Meridian",
+    "Southport",
+    "Homecroft",
+    "Beech Grove",
+    "Roncalli",
+    "Lutheran High School",
+    "Greenwood",
+    "Center Grove",
+    "Bargersville",
+    "Whiteland",
+    "New Whiteland",
+    "Franklin Community",
+    "Franklin, Indiana",
+    "Johnson County",
+    "Trafalgar",
+    "Nineveh",
+    "Indian Creek",
+    "Prince's Lakes",
+    "Princes Lakes",
+    "Edinburgh",
+    "County Line Road",
+    "Southport Road",
+    "Stop 11 Road",
+    "Banta Road",
+    "Thompson Road",
+    "Edgewood Avenue",
+    "Madison Avenue",
+    "Emerson Avenue",
+    "Shelby Street",
+    "Franklin Road",
+    "Arlington Avenue",
+    "Southeastern Avenue",
+    "Meridian School Road",
+    "Stones Crossing Road",
+    "Smith Valley Road",
+    "Worthsville Road",
+    "Whiteland Road",
+    "Tracy Road",
+    "Fairview Road",
+    "Morgantown Road",
+    "Five Points Road",
+    "Combs Road",
+    "State Road 135",
+    "SR 135",
+    "US 31",
+    "I-65 south",
+    "I-65 on the south side",
+    "south side Indianapolis",
+    "southside Indianapolis",
+    "south side of Indianapolis",
+    "health department",
+    "board of health",
+    "restaurant inspection",
+    "food inspection",
+    "building permit",
+    "rezoning",
+    "sewer rate",
+    "referendum",
+    "median home price"
+  ],
+  "sources": [
+    {
+      "name": "Franklin Township Community School Corp",
+      "url": "https://www.ftcsc.org/",
+      "scope": "southside",
+      "category": "school_district"
+    },
+    {
+      "name": "Franklin Township School Board Agendas",
+      "url": "https://www.ftcsc.org/page/school-board-meeting-agendas",
+      "scope": "southside",
+      "category": "school_board",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Franklin Central Athletics",
+      "url": "https://fcflashes.org/",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440
+    },
+    {
+      "name": "Franklin Central Athletics Events",
+      "url": "https://fcflashes.org/Events",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440
+    },
+    {
+      "name": "Perry Township Schools",
+      "url": "https://www.perryschools.org/",
+      "scope": "southside",
+      "category": "school_district"
+    },
+    {
+      "name": "Perry Township School Board",
+      "url": "https://www.perryschools.org/about/school-board/",
+      "scope": "southside",
+      "category": "school_board",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Perry Meridian Athletics",
+      "url": "https://www.pmhsfalcons.com/",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440
+    },
+    {
+      "name": "Southport Athletics",
+      "url": "https://www.southportcardinals.com/",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440
+    },
+    {
+      "name": "City of Beech Grove",
+      "url": "https://www.beechgrove.com/",
+      "scope": "southside",
+      "category": "city",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Beech Grove Common Council",
+      "url": "https://www.beechgrove.com/common-council",
+      "scope": "southside",
+      "category": "city_council",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Beech Grove City Schools",
+      "url": "https://bgcs.k12.in.us/",
+      "scope": "southside",
+      "category": "school_district"
+    },
+    {
+      "name": "Beech Grove School Board",
+      "url": "https://bgcs.k12.in.us/district-school-board-information/",
+      "scope": "southside",
+      "category": "school_board",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Beech Grove Athletics",
+      "url": "https://beechgrove-athletics.com/",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440
+    },
+    {
+      "name": "City of Southport",
+      "url": "https://www.in.gov/cities/southport/",
+      "scope": "southside",
+      "category": "city",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "City of Greenwood",
+      "url": "https://www.greenwood.in.gov/",
+      "scope": "southside",
+      "category": "city",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Greenwood Common Council Documents",
+      "url": "https://www.greenwood.in.gov/egov/apps/document/center.egov?act=&app=4&eGov_searchCategory=&eGov_searchDepartment=85&eGov_searchTitle=&eGov_searchTopic=&eGov_searchType=&eGov_searchYear=&id=&order=&page=4_1&path=&sect=content&view=browse",
+      "scope": "southside",
+      "category": "city_council",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Greenwood City Projects",
+      "url": "https://www.greenwood.in.gov/projects/",
+      "scope": "southside",
+      "category": "development",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Greenwood Community Schools",
+      "url": "https://www.gws.k12.in.us/",
+      "scope": "southside",
+      "category": "school_district"
+    },
+    {
+      "name": "Greenwood School Board",
+      "url": "https://www.gws.k12.in.us/page/board-of-education",
+      "scope": "southside",
+      "category": "school_board",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Greenwood Athletics",
+      "url": "https://www.woodmenathletics.com/",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440
+    },
+    {
+      "name": "Greenwood Athletics Events",
+      "url": "https://www.woodmenathletics.com/Events",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440
+    },
+    {
+      "name": "Center Grove Schools",
+      "url": "https://www.centergrove.k12.in.us/",
+      "scope": "southside",
+      "category": "school_district"
+    },
+    {
+      "name": "Center Grove School Board",
+      "url": "https://www.centergrove.k12.in.us/community/school-board",
+      "scope": "southside",
+      "category": "school_board",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Center Grove Athletics",
+      "url": "https://cghs.centergrove.k12.in.us/athletics",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440
+    },
+    {
+      "name": "Clark-Pleasant Schools",
+      "url": "https://www.cpcsc.k12.in.us/",
+      "scope": "southside",
+      "category": "school_district"
+    },
+    {
+      "name": "Clark-Pleasant School Board",
+      "url": "https://www.cpcsc.k12.in.us/page/board-of-school-trustees",
+      "scope": "southside",
+      "category": "school_board",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Clark-Pleasant Live Feed",
+      "url": "https://www.cpcsc.k12.in.us/live-feed?page_no=1",
+      "scope": "southside",
+      "category": "school_news"
+    },
+    {
+      "name": "Whiteland Athletics",
+      "url": "https://www.whitelandsports.com/",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440
+    },
+    {
+      "name": "Whiteland Athletics Events",
+      "url": "https://whitelandsports.com/Events",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440
+    },
+    {
+      "name": "Town of Bargersville",
+      "url": "https://www.townofbargersville.org/",
+      "scope": "southside",
+      "category": "town",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Town of Whiteland",
+      "url": "https://www.townofwhiteland.com/",
+      "scope": "southside",
+      "category": "town",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Whiteland Town Council",
+      "url": "https://www.townofwhiteland.com/government/elected-officials/town-council/",
+      "scope": "southside",
+      "category": "town_council",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Town of New Whiteland",
+      "url": "https://www.in.gov/towns/new-whiteland/",
+      "scope": "southside",
+      "category": "town",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "New Whiteland Town Council",
+      "url": "https://www.in.gov/towns/new-whiteland/town-council/",
+      "scope": "southside",
+      "category": "town_council",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Town of Trafalgar",
+      "url": "https://townoftrafalgar.org/",
+      "scope": "southside",
+      "category": "town",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Town of Edinburgh",
+      "url": "https://www.edinburgh.in.us/",
+      "scope": "southside",
+      "category": "town",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Town of Prince's Lakes",
+      "url": "https://princeslakes.in.gov/",
+      "scope": "southside",
+      "category": "town",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "City of Franklin",
+      "url": "https://www.franklin.in.gov/",
+      "scope": "southside",
+      "category": "city",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Franklin City Document Center",
+      "url": "https://www.franklin.in.gov/egov/apps/document/center.egov?view=group%3Bgroup%3Dstructure",
+      "scope": "southside",
+      "category": "city_government",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Franklin Community Schools",
+      "url": "https://franklinschools.org/",
+      "scope": "southside",
+      "category": "school_district"
+    },
+    {
+      "name": "Franklin Community School Board",
+      "url": "https://franklinschools.org/leadership",
+      "scope": "southside",
+      "category": "school_board",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Johnson County Government",
+      "url": "https://johnsoncounty.in.gov/",
+      "scope": "southside",
+      "category": "county",
+      "crawl_depth": 2,
+      "max_pages": 20
+    },
+    {
+      "name": "Johnson County Meetings",
+      "url": "https://johnsoncounty.in.gov/meetings/",
+      "scope": "southside",
+      "category": "county_meetings",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Johnson County Council Documents",
+      "url": "https://johnsoncounty.in.gov/egov/apps/document/center.egov?eGov_searchDepartment=23&eGov_searchType=12",
+      "scope": "southside",
+      "category": "county_council",
+      "refresh_minutes": 360,
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Johnson County Planning and Zoning Documents",
+      "url": "https://johnsoncounty.in.gov/egov/apps/document/center.egov?eGov_searchDepartment=41&eGov_searchType=11",
+      "scope": "southside",
+      "category": "planning_zoning",
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Indian Creek Schools",
+      "url": "https://www.indiancreekschools.com/",
+      "scope": "southside",
+      "category": "school_district"
+    },
+    {
+      "name": "Roncalli Athletics",
+      "url": "https://athletics.roncalli.org/",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440
+    },
+    {
+      "name": "Lutheran High School Athletics",
+      "url": "https://www.lhsi.org/athletics/",
+      "scope": "southside",
+      "category": "sports",
+      "refresh_minutes": 1440,
+      "max_pages": 6
+    },
+    {
+      "name": "Franklin Township Civic League",
+      "url": "https://www.ftcivicleague.org/",
+      "scope": "southside",
+      "category": "civic"
+    },
+    {
+      "name": "Daily Journal",
+      "url": "https://dailyjournal.net/feed/",
+      "scope": "southside",
+      "category": "news",
+      "refresh_minutes": 30,
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true
+    },
+    {
+      "name": "WTHR",
+      "url": "https://www.wthr.com/feeds/syndication/rss/news/local",
+      "scope": "broad",
+      "category": "news",
+      "refresh_minutes": 30,
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true
+    },
+    {
+      "name": "WISH-TV",
+      "url": "https://www.wishtv.com/feed/",
+      "scope": "broad",
+      "category": "news",
+      "refresh_minutes": 30,
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true
+    },
+    {
+      "name": "FOX59",
+      "url": "https://fox59.com/feed/",
+      "scope": "broad",
+      "category": "news",
+      "refresh_minutes": 30,
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true
+    },
+    {
+      "name": "WRTV",
+      "url": "https://www.wrtv.com/news/local-news.rss",
+      "scope": "broad",
+      "category": "news",
+      "refresh_minutes": 30,
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true
+    },
+    {
+      "name": "IndyStar",
+      "url": "https://rssfeeds.indystar.com/indystar/news",
+      "scope": "broad",
+      "category": "news",
+      "refresh_minutes": 30,
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true
+    },
+    {
+      "name": "Indianapolis Business Journal",
+      "url": "https://www.ibj.com/rss/news",
+      "scope": "broad",
+      "category": "business_news",
+      "refresh_minutes": 30,
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true
+    },
+    {
+      "name": "Indianapolis City-County Council",
+      "url": "https://www.indy.gov/agency/city-county-council",
+      "scope": "broad",
+      "category": "government"
+    },
+    {
+      "name": "Indianapolis DMD Meetings",
+      "url": "https://indianapolis-in.municodemeetings.com/DMDmeetings",
+      "scope": "broad",
+      "category": "planning_zoning",
+      "max_item_age_days": 400,
+      "max_pages": 40,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "INDOT",
+      "url": "https://www.in.gov/indot/",
+      "scope": "broad",
+      "category": "transportation",
+      "refresh_minutes": 30
+    },
+    {
+      "name": "INDOT Major Projects",
+      "url": "https://www.in.gov/indot/projects/",
+      "scope": "broad",
+      "category": "transportation",
+      "refresh_minutes": 30
+    },
+    {
+      "name": "INDOT Restrictions and Closings",
+      "url": "https://www.in.gov/indot/travel-conditions/restrictionsclosings/",
+      "scope": "broad",
+      "category": "transportation",
+      "refresh_minutes": 30
+    },
+    {
+      "name": "National Weather Service Indianapolis",
+      "url": "https://www.weather.gov/ind/",
+      "scope": "broad",
+      "category": "weather",
+      "refresh_minutes": 15
+    },
+    {
+      "name": "HS Football Scores - SI Indiana",
+      "url": "https://www.si.com/high-school/indiana/",
+      "scope": "broad",
+      "category": "sports",
+      "crawl_depth": 1,
+      "max_pages": 8,
+      "refresh_minutes": 30
+    },
+    {
+      "name": "HS Scores - ScoreStream Indiana",
+      "url": "https://scorestream.com/explore/r/indiana/high-school/football/scores",
+      "scope": "broad",
+      "category": "sports",
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "refresh_minutes": 30
+    },
+    {
+      "name": "HS Scores - MaxPreps Indiana",
+      "url": "https://www.maxpreps.com/in/football/scores/",
+      "scope": "broad",
+      "category": "sports",
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "refresh_minutes": 30
+    },
+    {
+      "name": "Daily Journal - Beyond the Headlines",
+      "url": "https://rss.buzzsprout.com/2596246.rss",
+      "scope": "southside",
+      "category": "news",
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true,
+      "refresh_minutes": 360
+    },
+    {
+      "name": "Marion County Public Health Department",
+      "url": "https://marionhealth.org/",
+      "scope": "broad",
+      "category": "health",
+      "crawl_depth": 2,
+      "max_pages": 20,
+      "refresh_minutes": 720,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Daily Journal - Restaurant Inspections",
+      "url": "https://dailyjournal.net/category/record-book/restaurant-inspections/feed/",
+      "scope": "southside",
+      "category": "health",
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true,
+      "refresh_minutes": 360,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    },
+    {
+      "name": "Daily Journal - Police Incidents",
+      "url": "https://dailyjournal.net/category/record-book/feed/",
+      "scope": "southside",
+      "category": "police",
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true,
+      "refresh_minutes": 180
+    },
+    {
+      "name": "Daily Journal - Local Sports",
+      "url": "https://dailyjournal.net/category/local-sports/feed/",
+      "scope": "southside",
+      "category": "sports",
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true,
+      "refresh_minutes": 120
+    },
+    {
+      "name": "Daily Journal - Public Notices",
+      "url": "https://dailyjournal.net/category/public-notices/feed/",
+      "scope": "southside",
+      "category": "government",
+      "crawl_depth": 0,
+      "max_pages": 1,
+      "is_feed": true,
+      "refresh_minutes": 360
+    },
+    {
+      "name": "Johnson County Board of Health",
+      "url": "https://johnsoncounty.in.gov/department/board.php?structureid=28",
+      "scope": "southside",
+      "category": "health",
+      "crawl_depth": 2,
+      "max_pages": 40,
+      "refresh_minutes": 720,
+      "max_item_age_days": 400,
+      "max_text_chars": 25000
+    }
+  ],
+  "scheduler": {
+    "master_run_minutes": 15,
+    "last_checked_file": "last_checked.json",
+    "default_refresh_minutes_by_category": {
+      "sports": 15,
+      "school_district": 30,
+      "school_news": 30,
+      "school_board": 360,
+      "news": 30,
+      "business_news": 30,
+      "city": 120,
+      "town": 120,
+      "county": 120,
+      "government": 120,
+      "city_government": 120,
+      "city_council": 360,
+      "town_council": 360,
+      "county_council": 360,
+      "county_meetings": 360,
+      "planning_zoning": 180,
+      "development": 120,
+      "transportation": 30,
+      "weather": 15,
+      "civic": 180
+    },
+    "fallback_refresh_minutes": 60
+  }
+}

@@ -1,0 +1,5 @@
+requests>=2.31
+beautifulsoup4>=4.12
+feedparser>=6.0
+pypdf>=5.0
+truststore>=0.9
