@@ -31,7 +31,6 @@ If the script runs at 8:00 and checks a council page, then runs again at
 refresh period has elapsed.
 
 ## CONFIGURATION
--------------
 Normally you edit config.json, NOT the Python file.
 
 The top-level "scheduler" section contains category defaults:
@@ -55,13 +54,11 @@ Example:
 You can change 15 to 10, 30, 60, 360, etc. whenever you want.
 
 ## INSTALL
--------
 Open Command Prompt / PowerShell in this folder:
 
     py -m pip install -r requirements.txt
 
 ## MANUAL RUN
-----------
     py metro_local_collector.py
 
 The output is:
@@ -71,7 +68,6 @@ The output is:
 A timestamped copy is also written each run.
 
 ## FORCE EVERYTHING TO RUN NOW
----------------------------
 If you want to ignore all refresh timers:
 
     py metro_local_collector.py --force-refresh
@@ -81,7 +77,6 @@ If you also want previously-seen items included:
     py metro_local_collector.py --force-refresh --all
 
 ## STATE FILES
------------
 seen_items.json
     Prevents old stories/items from being repeatedly emitted as new.
 
@@ -90,12 +85,10 @@ last_checked.json
     does not hammer every website every 15 minutes.
 
 ## IMPORTANT BEHAVIOR
-------------------
 A source that fails is NOT marked as successfully checked. That means it
 can retry on the next 15-minute master run instead of waiting several hours.
 
 ## AUTOMATING WINDOWS
-------------------
 The simplest Windows setup is Task Scheduler:
 
 1. Create Basic Task
@@ -111,7 +104,6 @@ The simplest Windows setup is Task Scheduler:
 The script itself decides which websites are actually due.
 
 ## ADDING/REMOVING SITES
----------------------
 Add a Southside-specific site:
 
     {
@@ -137,7 +129,6 @@ Add/remove locations, schools, roads, neighborhoods, etc. under:
     "broad_source_keywords"
 
 ## LIMITATIONS
------------
 No generic scraper can guarantee every website forever. Some sites change,
 block automated requests, use JavaScript, or put documents inside special
 systems.
@@ -146,7 +137,6 @@ Failures are recorded in the JSON "errors" section and do not stop the
 rest of the collection.
 
 ## SUGGESTED AI PROMPT
--------------------
 Upload output\latest.json and say:
 
 "Act as the editor of a concise Southside Indianapolis local-news account.
