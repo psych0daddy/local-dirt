@@ -4,7 +4,6 @@ Local Government Data Analysis Tool
 METROLOCAL INDY SOUTH — COLLECTOR
 
 ## WHAT THIS DOES
---------------
 This is intentionally a COLLECTOR, not an editor.
 
 Python gathers.
